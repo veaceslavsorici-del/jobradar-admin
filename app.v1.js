@@ -147,7 +147,9 @@ const RENDER = {
     const box = card(`📊 Итоги за ${state.days} дн.`, WHO.totals);
     if (!block.ok) return failed(box, block);
     const g = grid();
-    Object.keys(block.data).forEach((k) => {
+    // Сначала известные поля в порядке TOTALS (люди → вакансии → отклики → доставка), затем новые, если база их добавит.
+    const keys = Object.keys(TOTALS).filter((k) => k in block.data).concat(Object.keys(block.data).filter((k) => !(k in TOTALS)));
+    keys.forEach((k) => {
       if (typeof block.data[k] === "number") g.append(metric(TOTALS[k] || k, block.data[k]));
     });
     box.append(g);
