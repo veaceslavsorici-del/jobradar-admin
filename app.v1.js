@@ -8,6 +8,8 @@ const API = "https://grgsfcutzcyflnqogkbj.supabase.co/functions/v1/bright-worker
 const TOTALS = {
   new_users: "Новых людей", seekers_radar_on: "Радар включён", vacancies_active: "Активных вакансий",
   applications: "Откликов", invited: "Приглашено", hires_total: "Наймов всего",
+  // 05.11 (владелец: «в админке тоже изменить всё по новой»): письма компаниям через JobRadar (Resend).
+  mails_sent: "✉️ Писем компаниям", mails_failed: "Писем не ушло", mails_answered: "Компании ответили в боте",
 };
 const DELIVERY = { sent: "Доставлено", waiting: "Ждут отправки", retrying: "Повторяются", failed: "Не доставлено" };
 const PENDING = { vacancies: "Вакансии ждут проверки", edits: "Правки ждут", reports: "Жалобы", expired: "Истекли без проверки" };
